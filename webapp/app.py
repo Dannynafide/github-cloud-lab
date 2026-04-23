@@ -13,7 +13,10 @@ def index():
         visits = cache.incr("visits")
     except Exception:
         visits = "unavailable"
-    return f"<h1>GitHub Cloud Lab</h1><p>This page has been visited <strong>{visits}</strong> times.</p>"
+    return (
+        f"<h1>GitHub Cloud Lab</h1>"
+        f"<p>This page has been visited <strong>{visits}</strong> times.</p>"
+    )
 
 @app.route("/info")
 def info():
